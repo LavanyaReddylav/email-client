@@ -27,10 +27,10 @@
               "src/styles.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
               "node_modules/glyphicons-only-bootstrap/css/bootstrap.min.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"              
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [              
-              "node_modules/jquery/dist/jquery.min.js",             
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "Email-Client"
+  "defaultProject": "Email-Client",
+  "cli": {
+    "analytics": "51b8e4f8-9ce7-4521-a09b-c8a30657a630"
+  }
 }
