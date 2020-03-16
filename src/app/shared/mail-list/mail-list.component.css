@@ -1,0 +1,78 @@
+.mailListCard{
+    cursor: pointer; 
+    /*border-bottom: 1px solid gray   */
+ 
+  /* box-shadow: 5px 5px 5px 5px #888888; */
+      border: 1px solid gray;
+    margin-top: 1px;
+}
+
+.mailListCardContent{
+    white-space: nowrap; 
+    max-width: 100%; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mailListCardContentPara{
+    font-size: small;
+}
+.mailListCard:hover{
+    
+}
+
+.mailListHeader{
+    border-bottom: solid .5px gray;
+    background-color: oldlace;
+}
+
+
+.unread{
+    border-left-color: blue;
+    border-left-style: solid;
+}
+
+/* mail list header */
+
+.searchDiv{
+    margin-top: 3px;  
+}
+
+#navbarDropdownMenuLink{
+    float: right;
+}
+
+.FilterDropdown{
+    cursor: pointer;
+    margin-top: 10px;  
+    float: right;   
+}
+
+.has-search .form-control-feedback {
+    right: initial;
+    left: 0;
+    color: #ccc;
+}
+
+.has-search .form-control {
+    padding-right: 12px;
+    padding-left: 34px;
+}
+
+
+/* checkbox */
+.checkbox-round {    
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;    
+}
+
+.checkbox-round:checked {
+    background-color: lightblue;
+}

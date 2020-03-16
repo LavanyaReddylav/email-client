@@ -1,0 +1,55 @@
+<div class="row mailListHeader">
+    
+    <div class="col-lg-1 col-md-1 col-sm-1">
+            <input type="checkbox" class="checkbox-round" (change)="selectAllMail($event)" [checked]="isSelectedAll">
+    </div>    
+    <div class="col-lg-8 col-md-8 col-sm-8 searchDiv">
+            <input type='text' [(ngModel)]="searchChar" (change)="searchChange()"  placeholder="Search...">           
+    </div>
+    <div class="dropdown FilterDropdown col-lg-3 col-md-3 col-sm-3">
+            
+            <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"><i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            </a>
+            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                <a *ngIf="type !='inbox'" class="dropdown-item" (click)="moveSelectedMail('inbox')">Move Inbox</a>
+                <a *ngIf="type !='spam'" class="dropdown-item" (click)="moveSelectedMail('spam')">Move Spam</a>
+                <a *ngIf="type !='deleted-item'" class="dropdown-item" (click)="moveSelectedMail('deleted-item')">Move Delete Items</a>
+                <a *ngIf="type !='custom-folder'" class="dropdown-item" (click)="moveSelectedMail('custom-folder')">Move Custom Folder</a>
+            </div>
+    </div>
+</div>
+
+<div *ngIf="!emptyMailList">
+    <div class="row mailListCard" *ngFor="let item of mailDetailList">
+        <div [ngClass]="{ 'col-lg-12 col-md-12 col-sm-12':true,'unread' : item.unread==true}"
+            (click)="showMailDetail(item)">
+            <div class="row">
+                <div class="col-lg-1 col-md-1 col-sm-1">
+                    <input type="checkbox"class="checkbox-round" (change)="selectMail($event, item)"  [checked]="isSelectedAll">
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10" (click)="showMailDetail(item, true)">
+                    
+                    <h6 class="mailListCardContent">{{item.subject}}</h6>
+                    <p class="mailListCardContent mailListCardContentPara">{{item.content}}</p>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1">
+                    <div class="dropdown">
+                        <a id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"><i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-primary mail-list-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                            <a *ngIf="type !='inbox'" class="dropdown-item" (click)="moveMail(item,'inbox')">Move Inbox</a>
+                            <a *ngIf="type !='spam'" class="dropdown-item" (click)="moveMail(item,'spam')">Move Spam</a>
+                            <a *ngIf="type !='deleted-item'" class="dropdown-item" (click)="moveMail(item,'deleted-item')">Move Delete Items</a>
+                            <a *ngIf="type !='custom-folder'" class="dropdown-item" (click)="moveMail(item,'custom-folder')">Move Custom Folder</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+<div *ngIf="emptyMailList">
+    <span>No Mails</span>
+</div>

@@ -1,0 +1,31 @@
+<div class="row mail-content showScroll">
+    <div class="col-lg-12 col-md-12 col-sm-12" *ngIf="mailInfo && !multipleMailSelect">
+        <div>
+            <div class="mailContentImage">
+               <!-- <img [src]="../../../assets/images/user-images.jpg">  -->
+               <div class="row">
+                   <div class="col-lg-2 col-md-2 col-sm-2">
+                      <img class="profileImage" src="../../../assets/images/user-image.jpg">
+                   </div>
+                    <div class="col-lg-10 col-md-10 col-sm-10">
+                       <h5>Name of the mailer</h5>
+                    </div>                    
+               </div>
+            </div>
+            <hr>
+            <h5 class="card-subtitle mb-2 text-muted">{{mailInfo.subject}}</h5>
+            <p class="card-text">{{mailInfo.content}}</p>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 singleMailSelect showScroll" *ngIf="!mailInfo && !multipleMailSelect">
+        <a class="multipleMailSelectList mailUnReadActionNotify"> {{mailInfoMessage}} </a>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 multipleMailSelect showScroll" *ngIf="multipleMailSelect">
+       <ul class="list-unstyled multipleMailSelectList">
+            <li *ngFor="let moveItem of moveItemContent">
+                    <a *ngIf="mailContentType != moveItem.code" class="dropdown-item mailActionNotify" (click)="moveMail(moveItem.code)"> <span class={{moveItem.icon}}></span> {{moveItem.name}}</a>
+            </li>
+        </ul>
+
+    </div>
+</div>

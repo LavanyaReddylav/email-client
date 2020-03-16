@@ -1,0 +1,53 @@
+.mail-content{
+    border-left: 1px solid gray;
+}
+
+.mailListHeader{
+    background-color: #cccccc;
+}
+
+.multipleMailSelect{
+    background-image: url("../../../assets/images/multiple-mail-unread.jpg");
+    background-color: #cccccc;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.singleMailSelect{
+    background-image: url("../../../assets/images/single-unread.png");
+    background-color: #cccccc;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.multipleMailSelectList{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mailUnReadActionNotify{
+    font-size: 1.3em;
+    color: blue;
+}
+
+.mailActionNotify{
+    font-size: 1em;
+    color: blue;   
+}
+
+.profileImage{
+width: 100px;
+    height: 100px;
+}
+
+.mailContentImage{
+    box-shadow: 5px 5px antiquewhite ;
+}
